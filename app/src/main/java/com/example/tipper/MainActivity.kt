@@ -1,5 +1,6 @@
 package com.example.tipper
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         tvTipPercentLabel.text = "$INITIAL_TIP_PERCENT"
 
         seekBarTip.setOnSeekBarChangeListener(object: SeekBar.OnSeekBarChangeListener {
+            @SuppressLint("SetTextI18n")
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 Log.i(TAG,"onProgressChanged $progress")
                 tvTipPercentLabel.text = "$progress%"
@@ -53,6 +55,11 @@ class MainActivity : AppCompatActivity() {
         })
     }
     private fun computeTipAndTotal(){
+        if (etBaseAmount.text.isEmpty()){
+            tvTipAmount.text = ""
+            tvTotalAmount.text = ""
+            return
+        }
         // 1. get the value of the base and tip percent
         val baseAmount = etBaseAmount.text.toString().toDouble()
         val tipPercent = seekBarTip.progress
@@ -60,7 +67,7 @@ class MainActivity : AppCompatActivity() {
         val tipAmount = baseAmount * tipPercent / 100
         val totalAmount = baseAmount + tipAmount
         // 3. update the ui
-        tvTipAmount.text = tipAmount.toString()
-        tvTotalAmount.text = totalAmount.toString()
+        tvTipAmount.text = "%.2f".format(tipAmount)
+        tvTotalAmount.text = "%.2f".format(totalAmount)
     }
 }
