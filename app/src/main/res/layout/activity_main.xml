@@ -8,6 +8,17 @@
     tools:context=".MainActivity">
 
     <!-- views on the left side -->
+
+    <TextView
+        android:id="@+id/tvTipDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/seekBarTip"
+        app:layout_constraintStart_toStartOf="@+id/seekBarTip"
+        app:layout_constraintTop_toBottomOf="@+id/seekBarTip"
+        tools:text="accetable" />
+
     <TextView
         android:id="@+id/tvBaseLabel"
         android:layout_width="wrap_content"
@@ -34,7 +45,7 @@
         android:id="@+id/tvTipLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="56dp"
         android:text="Tip"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintEnd_toEndOf="@id/tvBaseLabel"
@@ -61,10 +72,9 @@
         android:hint="Bill Amount"
         android:inputType="numberDecimal"
         android:textSize="24sp"
-        app:layout_constraintStart_toEndOf="@+id/tvBaseLabel"
-        app:layout_constraintTop_toTopOf="@id/tvBaseLabel"
         app:layout_constraintBottom_toBottomOf="@id/tvBaseLabel"
-         />
+        app:layout_constraintStart_toEndOf="@+id/tvBaseLabel"
+        app:layout_constraintTop_toTopOf="@id/tvBaseLabel" />
 
     <SeekBar
         android:id="@+id/seekBarTip"
@@ -94,4 +104,16 @@
         app:layout_constraintStart_toStartOf="@+id/tvTipAmount"
         app:layout_constraintTop_toTopOf="@+id/tvTotalLabel"
         tools:text="103.11" />
+
+    <TextView
+        android:id="@+id/tvFooter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Made By Gutinz3ra"
+        android:textAllCaps="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
