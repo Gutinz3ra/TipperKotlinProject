@@ -10,4 +10,7 @@
     <color name="primary_red">#ff0000</color>
     <color name="darker_red">#a00000</color>
     <color name="background">#003442</color>
+    <color name="color_worst_tip">#DC1E0B</color>
+    <color name="color_best_tip">#35BA01</color>
+
 </resources>
